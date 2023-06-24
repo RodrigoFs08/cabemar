@@ -1,0 +1,16 @@
+GovernanceToken = 0xeCBDB55C8f46063eAA31d2164E1139695914EB4A
+
+
+Implemente o contrato do GovernanceToken. Este é o primeiro contrato a ser implementado porque é necessário para a implementação do contrato EntryToken.
+
+Implemente o contrato do EntryToken, fornecendo o endereço do contrato GovernanceToken no construtor.
+
+Implemente o contrato do RewardToken.
+
+Implemente o contrato do DonationTracking.
+
+Implemente o contrato CabemarDAO, fornecendo os endereços dos outros contratos no construtor.
+
+Para cada nova organização que deseja participar da DAO, os detentores do token de governança chamariam a função mint no contrato EntryToken para emitir um novo token de entrada para a organização.
+
+Para cada nova doação, a função donate no contrato DonationTracking seria chamada para criar um novo token ERC721 para rastrear a doação.
