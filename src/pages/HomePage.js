@@ -15,6 +15,12 @@ import EntryTokenABI from "../contracts/abi/EntryToken.json";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 
+import abi from '../contracts/abi/CabemarDAO.json'; // Importe o arquivo ABI
+
+const CONTRACT_ADDRESS = '0x7A99292E15119E156545372bD55dfC6400B5Dd12';
+
+const ABI =abi
+
 const tipos = {
   0: "DOADOR",
   1: "ONG",
@@ -37,7 +43,8 @@ function HomePage() {
   const [type, setType] = useState("");
   const [address, setAddress] = useState("");
   const [hasToken, setHasToken] = useState(false);
-
+  const [transactionHash, setTransactionHash] = useState(null);
+  const [transactionError, setTransactionError] = useState(null);
 
 useEffect(() => {
     initializeEntryTokenContract();
@@ -123,11 +130,30 @@ useEffect(() => {
     setOpenDialog(false);
   };
 
-  const handleCredentialing = () => {
-    // Aqui você pode implementar a lógica para enviar os dados do formulário.
-    // Por exemplo, você pode enviar uma transação para o smart contract.
-    closeCredentialingModal();
-  };
+  const handleCredentialing = async () => {
+    const provider = await detectEthereumProvider();
+
+    if (provider) {
+      const web3 = new Web3(provider);
+      const accounts = await web3.eth.getAccounts();
+      const contract = new web3.eth.Contract(ABI, CONTRACT_ADDRESS);
+
+      try {
+        const receipt =  await contract.methods.register(name, cnpj, type).send({ from: accounts[0] });
+
+        setTransactionHash(receipt.transactionHash);
+      } catch (error) {
+        setTransactionError(error.message);
+      }
+
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 5000);
+    } else {
+      console.log('Please install MetaMask!');
+    }
+  }
 
   return (
     <Container>

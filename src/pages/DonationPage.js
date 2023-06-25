@@ -1,6 +1,14 @@
 import React from 'react';
 import { TextField, Select, MenuItem, FormControl, InputLabel, Button, Box, Container } from '@mui/material';
 
+
+import abi from '../contracts/abi/DonationTracking.json'; // Importe o arquivo ABI
+
+const CONTRACT_ADDRESS = '0x662d5b8C29B1BB2295879De46CcDEB7bec9C06D3';
+
+const ABI =abi
+
+
 function DonationPage() {
 
   const [person, setPerson] = React.useState('');
@@ -39,9 +47,8 @@ function DonationPage() {
               onChange={handleChangePerson}
               label="Person"
             >
-              <MenuItem value="Person 1">Person 1</MenuItem>
-              <MenuItem value="Person 2">Person 2</MenuItem>
-              <MenuItem value="Person 3">Person 3</MenuItem>
+              <MenuItem value="Person 1">Barbearia 1</MenuItem>
+             
               {/* ...additional options... */}
             </Select>
           </FormControl>
