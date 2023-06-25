@@ -1,3 +1,11 @@
+# Cabemar DAO
+
+No início da implementação da DAO, vamos distribuir tokens de governança para Organizações Não Governamentais (ONGs) que se dedicam a receber doações de cabelos. Estas organizações terão acesso a uma página dedicada para o registro dessas doações. Além disso, elas também terão a capacidade de aprovar novos participantes no processo da cadeia de doação.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
