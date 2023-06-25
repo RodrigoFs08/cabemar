@@ -69,9 +69,9 @@ useEffect(() => {
   
         // Chama as funções do contrato e atualiza o estado do componente
         const balance = await contract.methods.balanceOf(accounts[0]).call();
-        if (String(balance) > 0) {
+        if (Number(balance) > 0) {
           setHasToken(true);
-          console.log("balance aqui", String(balance));
+          console.log("balance aqui", Number(balance));
         } else {
           console.log("Tá zerado");
 
