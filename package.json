@@ -22,7 +22,7 @@
     "web3": "^4.0.1"
   },
 
-  "homepage": "http://rodrigofs08.github.io/cabemar",
+  "homepage": "http://rodrigofs08.github.io/cabemar/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
