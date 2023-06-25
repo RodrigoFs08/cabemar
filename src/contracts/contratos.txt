@@ -1,4 +1,5 @@
 GovernanceToken = 0xeCBDB55C8f46063eAA31d2164E1139695914EB4A
+EntryToken = 0x32F4590e8d5cf06DfFF9EF3636bd037D38ed972c
 
 
 Implemente o contrato do GovernanceToken. Este é o primeiro contrato a ser implementado porque é necessário para a implementação do contrato EntryToken.
