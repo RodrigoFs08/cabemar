@@ -75,10 +75,10 @@ function VotePage() {
               <ListItemText primary={`${candidate[0]}`} secondary={`ID: ${candidate[3]}, Type: ${candidate[2]}`} />
               <ListItemSecondaryAction>
                 <Button variant="outlined" color="primary" onClick={() => handleVote(index, 'upvote')}>
-                  Upvote
+                  Aprovar
                 </Button>
                 <Button variant="outlined" color="secondary" onClick={() => handleVote(index, 'downvote')} style={{ marginLeft: 8 }}>
-                  Downvote
+                  Reprovar
                 </Button>
               </ListItemSecondaryAction>
             </ListItem>

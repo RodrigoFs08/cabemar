@@ -10,12 +10,10 @@ import Sidebar from "./components/Sidebar";
 import HomePage from "./pages/HomePage";
 import DonationPage from "./pages/DonationPage";
 import TrackingPage from "./pages/TrackingPage";
-import DonationInteractive from "./pages/DonationInteractive";
 import CertificationPage from "./pages/CertificationPage";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Web3 from "web3";
 import EntryTokenABI from "./contracts/abi/EntryToken.json";
-import UserCredentialsPage from "./pages/UserCredentialsPage";
 import detectEthereumProvider from "@metamask/detect-provider";
 
 const theme = createTheme({
@@ -57,10 +55,9 @@ function App() {
         <Routes>
           <Route path="/" exact element={<HomePage />}
           />
-          <Route path="/donation" element={<DonationPage />} />
-          <Route path="/tracking" element={<TrackingPage />} />
-          <Route path="/certification" element={<CertificationPage />} />
-          <Route path="/rewards" element={<DonationInteractive />} />
+          <Route path="/doacao" element={<DonationPage />} />
+          <Route path="/rastreamento" element={<TrackingPage />} />
+          <Route path="/certificacao" element={<CertificationPage />} />
 
         </Routes>
       </Router>

@@ -9,7 +9,7 @@ function Sidebar({ isOpen, onClose }) {
   return (
     <Drawer open={isOpen} onClose={onClose}>
       <List>
-        {['Home', 'Donation', 'Tracking', 'Certification', 'Donation Interative'].map((text, index) => (
+        {['Home', 'Doacao', 'Rastreamento', 'Certificacao'].map((text, index) => (
           <ListItem button key={text} component={Link} to={index === 0 ? '/' : `/${text.toLowerCase()}`}>
             <ListItemText primary={text} />
           </ListItem>

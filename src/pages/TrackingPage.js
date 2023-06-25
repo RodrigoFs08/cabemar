@@ -35,9 +35,8 @@ function TablePage() {
   };
 
   const data = [
-    { id: 1, donor: 'Donor 1', quantity: '2kg', events: [{time: '2023-06-27 12:00:00', event: 'Event1'}, {time: '2023-06-28 13:00:00', event: 'Event2'}, {time: '2023-06-29 14:00:00', event: 'Event3'}] },
-    { id: 2, donor: 'Donor 2', quantity: '3kg', events: [{time: '2023-06-27 12:00:00', event: 'Event1'}, {time: '2023-06-28 13:00:00', event: 'Event2'}] },
-    { id: 3, donor: 'Donor 3', quantity: '1.5kg', events: [{time: '2023-06-27 12:00:00', event: 'Event1'}] },
+    { id: 1, donor: 'Barbearia 1', quantity: '40 g', events: [{time: '2023-06-27 12:00:00', event: 'Doação recebida pela ONG'}, {time: '2023-06-28 13:00:00', event: 'Doação recebida pela Fabrica'}] },
+    { id: 2, donor: 'Barbearia 2', quantity: '3245,345 Kg', events: [{time: '2023-06-27 12:00:00', event: 'Doação recebida pela ONG'}, {time: '2023-06-28 13:00:00', event: 'Doação recebida pela Fabrica'}] },
   ];
 
   return (

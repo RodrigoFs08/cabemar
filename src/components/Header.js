@@ -21,7 +21,7 @@ function Header({ onMenuClick, loggedIn, account }) {
           style={{ width: "40px", height: "40px", marginRight: "8px" }}
         />
         <Typography variant="h6" component="div">
-          OceanLocks
+          CABEMAR DAO
         </Typography>
         {loggedIn && (
           <Typography

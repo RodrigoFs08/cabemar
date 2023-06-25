@@ -171,7 +171,7 @@ useEffect(() => {
             Connect to MetaMask
           </Button>
         ) : hasToken ? (
-          <p>Welcome, member {account}</p>
+          <p>Bem vindo! Membro {account}</p>
         ) : (
           <Button variant="contained" onClick={openCredentialingModal}>
             Realizar credenciamento
