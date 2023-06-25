@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@mui/system/Box";
 import Container from "@mui/material/Container";
 
-function HomePage() {
+function UserCredentialsPage() {
   return (
     <Container>
       <Box
@@ -19,4 +19,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default UserCredentialsPage;
