@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/cabemar/static/css/main.e6c13ad2.css",
-    "main.js": "/cabemar/static/js/main.9a1222dc.js",
-    "static/js/787.95c11c9f.chunk.js": "/cabemar/static/js/787.95c11c9f.chunk.js",
+    "main.js": "/cabemar/static/js/main.0f76948b.js",
+    "static/js/787.4326728b.chunk.js": "/cabemar/static/js/787.4326728b.chunk.js",
     "static/media/cabemar_logo-removebg.png": "/cabemar/static/media/cabemar_logo-removebg.7bfb015d7f2253cb6631.png",
     "index.html": "/cabemar/index.html",
     "main.e6c13ad2.css.map": "/cabemar/static/css/main.e6c13ad2.css.map",
-    "main.9a1222dc.js.map": "/cabemar/static/js/main.9a1222dc.js.map",
-    "787.95c11c9f.chunk.js.map": "/cabemar/static/js/787.95c11c9f.chunk.js.map"
+    "main.0f76948b.js.map": "/cabemar/static/js/main.0f76948b.js.map",
+    "787.4326728b.chunk.js.map": "/cabemar/static/js/787.4326728b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.9a1222dc.js"
+    "static/js/main.0f76948b.js"
   ]
 }
