@@ -69,9 +69,9 @@ useEffect(() => {
   
         // Chama as funções do contrato e atualiza o estado do componente
         const balance = await contract.methods.balanceOf(accounts[0]).call();
-        if (balance > 0) {
+        if (String(balance) > 0) {
           setHasToken(true);
-          console.log("balance aqui", balance);
+          console.log("balance aqui", String(balance));
         } else {
           console.log("Tá zerado");
 
@@ -155,9 +155,10 @@ useEffect(() => {
     }
   }
 
-  return (
-    <Container>
-      <Box
+ return (
+        <Container style = {{ backgroundColor: "#86CFD5"}}>
+        {/* <Header /> */}
+        <Box
         sx={{
           position: "fixed",
           display: "flex",
@@ -166,66 +167,80 @@ useEffect(() => {
           height: "calc(100vh - 64px)",
         }}
       >
-        {account === "" ? (
-          <Button variant="contained" onClick={connectToMetaMask}>
-            Connect to MetaMask
-          </Button>
-        ) : hasToken ? (
-          <p>Bem vindo! Membro {account}</p>
-        ) : (
-          <Button variant="contained" onClick={openCredentialingModal}>
-            Realizar credenciamento
-          </Button>
-        )}
+        
 
+       
+      
+        {account === "" ? (
+          <div style={{ textAlign: "left" }}>
+            <p>
+
+            </p>
+            <p style={{ textAlign: "left", color: "#000080" }}>Estamos vivendo a era do plástico, você aí come até 121 mil partículas de plástico por ano segundo um grupo de cientistas da Universidade de Victoria, no Canadá. O plástico é criado por   processos petroquímicos, um dos processos mais poluentes que existe. Em 2019, a ONG Fair Planet informou que aproximadamente 2.6 bilhões de litros de desperdício de óleo são derramados nos oceanos, anualmente. Sendo que cada litro de óleo polui 1 milhão de litros de água. Hoje as ongs e empresas que se propõem a limpar os rios e mares usam grandes tapetes de plástico, que são usados para limpar o derramamento de óleo, tapetes que feitos de plástico e soltam microplásticos nos rios e mares. Existe hoje em dia um processo de criação de tapetes de cabelo ou fios de pelos de animais que são capazes de limpar rios, mares e oceanos de forma muito eficiente, uma vez que cada fio de cabelo tem capacidade em 5x o seu peso de absorção de óleo.</p>
+            <Button variant="contained" onClick={connectToMetaMask}>
+              Connect to MetaMask
+            </Button>
+          </div>
+        ) : hasToken ? (
+        <p>Bem vindo, {account}</p>
+        ) : (
+          <div style={{ textAlign: "center" }}>
+          <p>
+
+          </p>
+          <p style={{ textAlign: "justify", color: "#000080" }}>Estamos vivendo a era do plástico, você aí come até 121 mil partículas de plástico por ano segundo um grupo de cientistas da Universidade de Victoria, no Canadá. O plástico é criado por   processos petroquímicos, um dos processos mais poluentes que existe. Em 2019, a ONG Fair Planet informou que aproximadamente 2.6 bilhões de litros de desperdício de óleo são derramados nos oceanos, anualmente. Sendo que cada litro de óleo polui 1 milhão de litros de água. Hoje as ongs e empresas que se propõem a limpar os rios e mares usam grandes tapetes de plástico, que são usados para limpar o derramamento de óleo, tapetes que feitos de plástico e soltam microplásticos nos rios e mares. Existe hoje em dia um processo de criação de tapetes de cabelo ou fios de pelos de animais que são capazes de limpar rios, mares e oceanos de forma muito eficiente, uma vez que cada fio de cabelo tem capacidade em 5x o seu peso de absorção de óleo.</p>
+
+            <Button  style={{ display: "flex", alignItems: "center", marginBottom: "16px" }} variant="contained" onClick={openCredentialingModal}>
+              Realizar credenciamento
+            </Button>
+          </div>
+        )}
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <div>
-          <Alert onClose={handleClose} severity={severity}>
-            {message}
-          </Alert>
-          </div>
+        <Alert onClose={handleClose} severity={severity}>
+        {message}
+        </Alert>
+        </div>
         </Snackbar>
         <Dialog open={openDialog} onClose={closeCredentialingModal}>
-          <DialogTitle>Realizar credenciamento</DialogTitle>
-          <DialogContent>
-            <TextField
-              autoFocus
-              margin="dense"
-              label="Nome"
-              type="text"
-              fullWidth
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <TextField
-              margin="dense"
-              label="CNPJ"
-              type="text"
-              fullWidth
-              value={cnpj}
-              onChange={(e) => setCnpj(e.target.value)}
-            />
-            <Select
-  value={type}
-  onChange={(e) => setType(e.target.value)}
-  fullWidth
->
-  {Object.keys(tipos).map((key) => (
-    <MenuItem value={key}>{tipos[key]}</MenuItem>
-  ))}
-</Select>
-           
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={closeCredentialingModal}>Cancelar</Button>
-            <Button onClick={handleCredentialing}>Credenciar</Button>
-          </DialogActions>
+        <DialogTitle>Realizar credenciamento</DialogTitle>
+        <DialogContent>
+        <TextField
+        autoFocus
+        margin="dense"
+        label="Nome"
+        type="text"
+        fullWidth
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        />
+        <TextField
+        margin="dense"
+        label="CNPJ"
+        type="text"
+        fullWidth
+        value={cnpj}
+        onChange={(e) => setCnpj(e.target.value)}
+        />
+        <Select
+        value={type}
+        onChange={(e) => setType(e.target.value)}
+        fullWidth
+        >
+        {Object.keys(tipos).map((key) => (
+        <MenuItem value={key}>{tipos[key]}</MenuItem>
+        ))}
+        </Select>
+        </DialogContent>
+        <DialogActions>
+        <Button onClick={closeCredentialingModal}>Cancelar</Button>
+        <Button onClick={handleCredentialing}>Credenciar</Button>
+        </DialogActions>
         </Dialog>
-
-        
-      </Box>
-    </Container>
-  );
-}
+        </Box>
+        </Container>
+        );
+        }
 
 export default HomePage;
+
